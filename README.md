@@ -1,4 +1,4 @@
-# C# library for the Weather API
+# C# library for the WeatherAPI.com
 
 # Introduction  
 
