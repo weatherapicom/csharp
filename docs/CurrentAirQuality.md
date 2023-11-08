@@ -3,12 +3,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Co** | [**decimal?**](BigDecimal.md) |  | [optional] 
-**No2** | [**decimal?**](BigDecimal.md) |  | [optional] 
-**O3** | [**decimal?**](BigDecimal.md) |  | [optional] 
-**So2** | **int?** |  | [optional] 
-**Pm25** | [**decimal?**](BigDecimal.md) |  | [optional] 
-**Pm10** | **int?** |  | [optional] 
+**Co** | **decimal?** |  | [optional] 
+**No2** | **decimal?** |  | [optional] 
+**O3** | **decimal?** |  | [optional] 
+**So2** | **decimal?** |  | [optional] 
+**Pm25** | **decimal?** |  | [optional] 
+**Pm10** | **decimal?** |  | [optional] 
 **UsEpaIndex** | **int?** |  | [optional] 
 **GbDefraIndex** | **int?** |  | [optional] 
 

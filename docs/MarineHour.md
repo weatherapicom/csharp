@@ -1,14 +1,14 @@
-# IO.Swagger.Model.Current
+# IO.Swagger.Model.MarineHour
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LastUpdatedEpoch** | **int?** |  | [optional] 
-**LastUpdated** | **string** |  | [optional] 
+**TimeEpoch** | **int?** |  | [optional] 
+**Time** | **string** |  | [optional] 
 **TempC** | **decimal?** |  | [optional] 
 **TempF** | **decimal?** |  | [optional] 
 **IsDay** | **int?** |  | [optional] 
-**Condition** | [**CurrentCondition**](CurrentCondition.md) |  | [optional] 
+**Condition** | [**ForecastCondition**](ForecastCondition.md) |  | [optional] 
 **WindMph** | **decimal?** |  | [optional] 
 **WindKph** | **decimal?** |  | [optional] 
 **WindDegree** | **decimal?** |  | [optional] 
@@ -21,12 +21,27 @@ Name | Type | Description | Notes
 **Cloud** | **decimal?** |  | [optional] 
 **FeelslikeC** | **decimal?** |  | [optional] 
 **FeelslikeF** | **decimal?** |  | [optional] 
+**WindchillC** | **decimal?** |  | [optional] 
+**WindchillF** | **decimal?** |  | [optional] 
+**HeatindexC** | **decimal?** |  | [optional] 
+**HeatindexF** | **decimal?** |  | [optional] 
+**DewpointC** | **decimal?** |  | [optional] 
+**DewpointF** | **decimal?** |  | [optional] 
+**WillItRain** | **int?** |  | [optional] 
+**ChanceOfRain** | **decimal?** |  | [optional] 
+**WillItSnow** | **int?** |  | [optional] 
+**ChanceOfSnow** | **decimal?** |  | [optional] 
 **VisKm** | **decimal?** |  | [optional] 
 **VisMiles** | **decimal?** |  | [optional] 
-**Uv** | **int?** |  | [optional] 
 **GustMph** | **decimal?** |  | [optional] 
 **GustKph** | **decimal?** |  | [optional] 
-**AirQuality** | [**CurrentAirQuality**](CurrentAirQuality.md) |  | [optional] 
+**SigHtMt** | **decimal?** |  | [optional] 
+**SwellHtMt** | **decimal?** |  | [optional] 
+**SwellHtFt** | **decimal?** |  | [optional] 
+**SwellDir** | **decimal?** |  | [optional] 
+**SwellDir16Point** | **decimal?** |  | [optional] 
+**SwellPeriodSecs** | **decimal?** |  | [optional] 
+**Uv** | **int?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -25,33 +25,25 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// Error401
+    /// Marine
     /// </summary>
     [DataContract]
-    public partial class Error401 :  IEquatable<Error401>, IValidatableObject
+    public partial class Marine :  IEquatable<Marine>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Error401" /> class.
+        /// Initializes a new instance of the <see cref="Marine" /> class.
         /// </summary>
-        /// <param name="code">code.</param>
-        /// <param name="message">message.</param>
-        public Error401(int? code = default(int?), string message = default(string))
+        /// <param name="forecastday">forecastday.</param>
+        public Marine(List<MarineForecastday> forecastday = default(List<MarineForecastday>))
         {
-            this.Code = code;
-            this.Message = message;
+            this.Forecastday = forecastday;
         }
         
         /// <summary>
-        /// Gets or Sets Code
+        /// Gets or Sets Forecastday
         /// </summary>
-        [DataMember(Name="code", EmitDefaultValue=false)]
-        public int? Code { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Message
-        /// </summary>
-        [DataMember(Name="message", EmitDefaultValue=false)]
-        public string Message { get; set; }
+        [DataMember(Name="forecastday", EmitDefaultValue=false)]
+        public List<MarineForecastday> Forecastday { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,9 +52,8 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Error401 {\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("class Marine {\n");
+            sb.Append("  Forecastday: ").Append(Forecastday).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,29 +74,24 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Error401);
+            return this.Equals(input as Marine);
         }
 
         /// <summary>
-        /// Returns true if Error401 instances are equal
+        /// Returns true if Marine instances are equal
         /// </summary>
-        /// <param name="input">Instance of Error401 to be compared</param>
+        /// <param name="input">Instance of Marine to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Error401 input)
+        public bool Equals(Marine input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
+                    this.Forecastday == input.Forecastday ||
+                    this.Forecastday != null &&
+                    this.Forecastday.SequenceEqual(input.Forecastday)
                 );
         }
 
@@ -118,10 +104,8 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Forecastday != null)
+                    hashCode = hashCode * 59 + this.Forecastday.GetHashCode();
                 return hashCode;
             }
         }

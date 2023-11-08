@@ -25,16 +25,16 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// Current
+    /// MarineHour
     /// </summary>
     [DataContract]
-    public partial class Current :  IEquatable<Current>, IValidatableObject
+    public partial class MarineHour :  IEquatable<MarineHour>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Current" /> class.
+        /// Initializes a new instance of the <see cref="MarineHour" /> class.
         /// </summary>
-        /// <param name="lastUpdatedEpoch">lastUpdatedEpoch.</param>
-        /// <param name="lastUpdated">lastUpdated.</param>
+        /// <param name="timeEpoch">timeEpoch.</param>
+        /// <param name="time">time.</param>
         /// <param name="tempC">tempC.</param>
         /// <param name="tempF">tempF.</param>
         /// <param name="isDay">isDay.</param>
@@ -51,16 +51,31 @@ namespace IO.Swagger.Model
         /// <param name="cloud">cloud.</param>
         /// <param name="feelslikeC">feelslikeC.</param>
         /// <param name="feelslikeF">feelslikeF.</param>
+        /// <param name="windchillC">windchillC.</param>
+        /// <param name="windchillF">windchillF.</param>
+        /// <param name="heatindexC">heatindexC.</param>
+        /// <param name="heatindexF">heatindexF.</param>
+        /// <param name="dewpointC">dewpointC.</param>
+        /// <param name="dewpointF">dewpointF.</param>
+        /// <param name="willItRain">willItRain.</param>
+        /// <param name="chanceOfRain">chanceOfRain.</param>
+        /// <param name="willItSnow">willItSnow.</param>
+        /// <param name="chanceOfSnow">chanceOfSnow.</param>
         /// <param name="visKm">visKm.</param>
         /// <param name="visMiles">visMiles.</param>
-        /// <param name="uv">uv.</param>
         /// <param name="gustMph">gustMph.</param>
         /// <param name="gustKph">gustKph.</param>
-        /// <param name="airQuality">airQuality.</param>
-        public Current(int? lastUpdatedEpoch = default(int?), string lastUpdated = default(string), decimal? tempC = default(decimal?), decimal? tempF = default(decimal?), int? isDay = default(int?), CurrentCondition condition = default(CurrentCondition), decimal? windMph = default(decimal?), decimal? windKph = default(decimal?), decimal? windDegree = default(decimal?), string windDir = default(string), decimal? pressureMb = default(decimal?), decimal? pressureIn = default(decimal?), decimal? precipMm = default(decimal?), decimal? precipIn = default(decimal?), decimal? humidity = default(decimal?), decimal? cloud = default(decimal?), decimal? feelslikeC = default(decimal?), decimal? feelslikeF = default(decimal?), decimal? visKm = default(decimal?), decimal? visMiles = default(decimal?), int? uv = default(int?), decimal? gustMph = default(decimal?), decimal? gustKph = default(decimal?), CurrentAirQuality airQuality = default(CurrentAirQuality))
+        /// <param name="sigHtMt">sigHtMt.</param>
+        /// <param name="swellHtMt">swellHtMt.</param>
+        /// <param name="swellHtFt">swellHtFt.</param>
+        /// <param name="swellDir">swellDir.</param>
+        /// <param name="swellDir16Point">swellDir16Point.</param>
+        /// <param name="swellPeriodSecs">swellPeriodSecs.</param>
+        /// <param name="uv">uv.</param>
+        public MarineHour(int? timeEpoch = default(int?), string time = default(string), decimal? tempC = default(decimal?), decimal? tempF = default(decimal?), int? isDay = default(int?), ForecastCondition condition = default(ForecastCondition), decimal? windMph = default(decimal?), decimal? windKph = default(decimal?), decimal? windDegree = default(decimal?), string windDir = default(string), decimal? pressureMb = default(decimal?), decimal? pressureIn = default(decimal?), decimal? precipMm = default(decimal?), decimal? precipIn = default(decimal?), decimal? humidity = default(decimal?), decimal? cloud = default(decimal?), decimal? feelslikeC = default(decimal?), decimal? feelslikeF = default(decimal?), decimal? windchillC = default(decimal?), decimal? windchillF = default(decimal?), decimal? heatindexC = default(decimal?), decimal? heatindexF = default(decimal?), decimal? dewpointC = default(decimal?), decimal? dewpointF = default(decimal?), int? willItRain = default(int?), decimal? chanceOfRain = default(decimal?), int? willItSnow = default(int?), decimal? chanceOfSnow = default(decimal?), decimal? visKm = default(decimal?), decimal? visMiles = default(decimal?), decimal? gustMph = default(decimal?), decimal? gustKph = default(decimal?), decimal? sigHtMt = default(decimal?), decimal? swellHtMt = default(decimal?), decimal? swellHtFt = default(decimal?), decimal? swellDir = default(decimal?), decimal? swellDir16Point = default(decimal?), decimal? swellPeriodSecs = default(decimal?), int? uv = default(int?))
         {
-            this.LastUpdatedEpoch = lastUpdatedEpoch;
-            this.LastUpdated = lastUpdated;
+            this.TimeEpoch = timeEpoch;
+            this.Time = time;
             this.TempC = tempC;
             this.TempF = tempF;
             this.IsDay = isDay;
@@ -77,25 +92,40 @@ namespace IO.Swagger.Model
             this.Cloud = cloud;
             this.FeelslikeC = feelslikeC;
             this.FeelslikeF = feelslikeF;
+            this.WindchillC = windchillC;
+            this.WindchillF = windchillF;
+            this.HeatindexC = heatindexC;
+            this.HeatindexF = heatindexF;
+            this.DewpointC = dewpointC;
+            this.DewpointF = dewpointF;
+            this.WillItRain = willItRain;
+            this.ChanceOfRain = chanceOfRain;
+            this.WillItSnow = willItSnow;
+            this.ChanceOfSnow = chanceOfSnow;
             this.VisKm = visKm;
             this.VisMiles = visMiles;
-            this.Uv = uv;
             this.GustMph = gustMph;
             this.GustKph = gustKph;
-            this.AirQuality = airQuality;
+            this.SigHtMt = sigHtMt;
+            this.SwellHtMt = swellHtMt;
+            this.SwellHtFt = swellHtFt;
+            this.SwellDir = swellDir;
+            this.SwellDir16Point = swellDir16Point;
+            this.SwellPeriodSecs = swellPeriodSecs;
+            this.Uv = uv;
         }
         
         /// <summary>
-        /// Gets or Sets LastUpdatedEpoch
+        /// Gets or Sets TimeEpoch
         /// </summary>
-        [DataMember(Name="last_updated_epoch", EmitDefaultValue=false)]
-        public int? LastUpdatedEpoch { get; set; }
+        [DataMember(Name="time_epoch", EmitDefaultValue=false)]
+        public int? TimeEpoch { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastUpdated
+        /// Gets or Sets Time
         /// </summary>
-        [DataMember(Name="last_updated", EmitDefaultValue=false)]
-        public string LastUpdated { get; set; }
+        [DataMember(Name="time", EmitDefaultValue=false)]
+        public string Time { get; set; }
 
         /// <summary>
         /// Gets or Sets TempC
@@ -119,7 +149,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Condition
         /// </summary>
         [DataMember(Name="condition", EmitDefaultValue=false)]
-        public CurrentCondition Condition { get; set; }
+        public ForecastCondition Condition { get; set; }
 
         /// <summary>
         /// Gets or Sets WindMph
@@ -194,6 +224,66 @@ namespace IO.Swagger.Model
         public decimal? FeelslikeF { get; set; }
 
         /// <summary>
+        /// Gets or Sets WindchillC
+        /// </summary>
+        [DataMember(Name="windchill_c", EmitDefaultValue=false)]
+        public decimal? WindchillC { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WindchillF
+        /// </summary>
+        [DataMember(Name="windchill_f", EmitDefaultValue=false)]
+        public decimal? WindchillF { get; set; }
+
+        /// <summary>
+        /// Gets or Sets HeatindexC
+        /// </summary>
+        [DataMember(Name="heatindex_c", EmitDefaultValue=false)]
+        public decimal? HeatindexC { get; set; }
+
+        /// <summary>
+        /// Gets or Sets HeatindexF
+        /// </summary>
+        [DataMember(Name="heatindex_f", EmitDefaultValue=false)]
+        public decimal? HeatindexF { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DewpointC
+        /// </summary>
+        [DataMember(Name="dewpoint_c", EmitDefaultValue=false)]
+        public decimal? DewpointC { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DewpointF
+        /// </summary>
+        [DataMember(Name="dewpoint_f", EmitDefaultValue=false)]
+        public decimal? DewpointF { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WillItRain
+        /// </summary>
+        [DataMember(Name="will_it_rain", EmitDefaultValue=false)]
+        public int? WillItRain { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ChanceOfRain
+        /// </summary>
+        [DataMember(Name="chance_of_rain", EmitDefaultValue=false)]
+        public decimal? ChanceOfRain { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WillItSnow
+        /// </summary>
+        [DataMember(Name="will_it_snow", EmitDefaultValue=false)]
+        public int? WillItSnow { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ChanceOfSnow
+        /// </summary>
+        [DataMember(Name="chance_of_snow", EmitDefaultValue=false)]
+        public decimal? ChanceOfSnow { get; set; }
+
+        /// <summary>
         /// Gets or Sets VisKm
         /// </summary>
         [DataMember(Name="vis_km", EmitDefaultValue=false)]
@@ -204,12 +294,6 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="vis_miles", EmitDefaultValue=false)]
         public decimal? VisMiles { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Uv
-        /// </summary>
-        [DataMember(Name="uv", EmitDefaultValue=false)]
-        public int? Uv { get; set; }
 
         /// <summary>
         /// Gets or Sets GustMph
@@ -224,10 +308,46 @@ namespace IO.Swagger.Model
         public decimal? GustKph { get; set; }
 
         /// <summary>
-        /// Gets or Sets AirQuality
+        /// Gets or Sets SigHtMt
         /// </summary>
-        [DataMember(Name="air_quality", EmitDefaultValue=false)]
-        public CurrentAirQuality AirQuality { get; set; }
+        [DataMember(Name="sig_ht_mt", EmitDefaultValue=false)]
+        public decimal? SigHtMt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SwellHtMt
+        /// </summary>
+        [DataMember(Name="swell_ht_mt", EmitDefaultValue=false)]
+        public decimal? SwellHtMt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SwellHtFt
+        /// </summary>
+        [DataMember(Name="swell_ht_ft", EmitDefaultValue=false)]
+        public decimal? SwellHtFt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SwellDir
+        /// </summary>
+        [DataMember(Name="swell_dir", EmitDefaultValue=false)]
+        public decimal? SwellDir { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SwellDir16Point
+        /// </summary>
+        [DataMember(Name="swell_dir_16_point", EmitDefaultValue=false)]
+        public decimal? SwellDir16Point { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SwellPeriodSecs
+        /// </summary>
+        [DataMember(Name="swell_period_secs", EmitDefaultValue=false)]
+        public decimal? SwellPeriodSecs { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Uv
+        /// </summary>
+        [DataMember(Name="uv", EmitDefaultValue=false)]
+        public int? Uv { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -236,9 +356,9 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Current {\n");
-            sb.Append("  LastUpdatedEpoch: ").Append(LastUpdatedEpoch).Append("\n");
-            sb.Append("  LastUpdated: ").Append(LastUpdated).Append("\n");
+            sb.Append("class MarineHour {\n");
+            sb.Append("  TimeEpoch: ").Append(TimeEpoch).Append("\n");
+            sb.Append("  Time: ").Append(Time).Append("\n");
             sb.Append("  TempC: ").Append(TempC).Append("\n");
             sb.Append("  TempF: ").Append(TempF).Append("\n");
             sb.Append("  IsDay: ").Append(IsDay).Append("\n");
@@ -255,12 +375,27 @@ namespace IO.Swagger.Model
             sb.Append("  Cloud: ").Append(Cloud).Append("\n");
             sb.Append("  FeelslikeC: ").Append(FeelslikeC).Append("\n");
             sb.Append("  FeelslikeF: ").Append(FeelslikeF).Append("\n");
+            sb.Append("  WindchillC: ").Append(WindchillC).Append("\n");
+            sb.Append("  WindchillF: ").Append(WindchillF).Append("\n");
+            sb.Append("  HeatindexC: ").Append(HeatindexC).Append("\n");
+            sb.Append("  HeatindexF: ").Append(HeatindexF).Append("\n");
+            sb.Append("  DewpointC: ").Append(DewpointC).Append("\n");
+            sb.Append("  DewpointF: ").Append(DewpointF).Append("\n");
+            sb.Append("  WillItRain: ").Append(WillItRain).Append("\n");
+            sb.Append("  ChanceOfRain: ").Append(ChanceOfRain).Append("\n");
+            sb.Append("  WillItSnow: ").Append(WillItSnow).Append("\n");
+            sb.Append("  ChanceOfSnow: ").Append(ChanceOfSnow).Append("\n");
             sb.Append("  VisKm: ").Append(VisKm).Append("\n");
             sb.Append("  VisMiles: ").Append(VisMiles).Append("\n");
-            sb.Append("  Uv: ").Append(Uv).Append("\n");
             sb.Append("  GustMph: ").Append(GustMph).Append("\n");
             sb.Append("  GustKph: ").Append(GustKph).Append("\n");
-            sb.Append("  AirQuality: ").Append(AirQuality).Append("\n");
+            sb.Append("  SigHtMt: ").Append(SigHtMt).Append("\n");
+            sb.Append("  SwellHtMt: ").Append(SwellHtMt).Append("\n");
+            sb.Append("  SwellHtFt: ").Append(SwellHtFt).Append("\n");
+            sb.Append("  SwellDir: ").Append(SwellDir).Append("\n");
+            sb.Append("  SwellDir16Point: ").Append(SwellDir16Point).Append("\n");
+            sb.Append("  SwellPeriodSecs: ").Append(SwellPeriodSecs).Append("\n");
+            sb.Append("  Uv: ").Append(Uv).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -281,29 +416,29 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Current);
+            return this.Equals(input as MarineHour);
         }
 
         /// <summary>
-        /// Returns true if Current instances are equal
+        /// Returns true if MarineHour instances are equal
         /// </summary>
-        /// <param name="input">Instance of Current to be compared</param>
+        /// <param name="input">Instance of MarineHour to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Current input)
+        public bool Equals(MarineHour input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.LastUpdatedEpoch == input.LastUpdatedEpoch ||
-                    (this.LastUpdatedEpoch != null &&
-                    this.LastUpdatedEpoch.Equals(input.LastUpdatedEpoch))
+                    this.TimeEpoch == input.TimeEpoch ||
+                    (this.TimeEpoch != null &&
+                    this.TimeEpoch.Equals(input.TimeEpoch))
                 ) && 
                 (
-                    this.LastUpdated == input.LastUpdated ||
-                    (this.LastUpdated != null &&
-                    this.LastUpdated.Equals(input.LastUpdated))
+                    this.Time == input.Time ||
+                    (this.Time != null &&
+                    this.Time.Equals(input.Time))
                 ) && 
                 (
                     this.TempC == input.TempC ||
@@ -386,6 +521,56 @@ namespace IO.Swagger.Model
                     this.FeelslikeF.Equals(input.FeelslikeF))
                 ) && 
                 (
+                    this.WindchillC == input.WindchillC ||
+                    (this.WindchillC != null &&
+                    this.WindchillC.Equals(input.WindchillC))
+                ) && 
+                (
+                    this.WindchillF == input.WindchillF ||
+                    (this.WindchillF != null &&
+                    this.WindchillF.Equals(input.WindchillF))
+                ) && 
+                (
+                    this.HeatindexC == input.HeatindexC ||
+                    (this.HeatindexC != null &&
+                    this.HeatindexC.Equals(input.HeatindexC))
+                ) && 
+                (
+                    this.HeatindexF == input.HeatindexF ||
+                    (this.HeatindexF != null &&
+                    this.HeatindexF.Equals(input.HeatindexF))
+                ) && 
+                (
+                    this.DewpointC == input.DewpointC ||
+                    (this.DewpointC != null &&
+                    this.DewpointC.Equals(input.DewpointC))
+                ) && 
+                (
+                    this.DewpointF == input.DewpointF ||
+                    (this.DewpointF != null &&
+                    this.DewpointF.Equals(input.DewpointF))
+                ) && 
+                (
+                    this.WillItRain == input.WillItRain ||
+                    (this.WillItRain != null &&
+                    this.WillItRain.Equals(input.WillItRain))
+                ) && 
+                (
+                    this.ChanceOfRain == input.ChanceOfRain ||
+                    (this.ChanceOfRain != null &&
+                    this.ChanceOfRain.Equals(input.ChanceOfRain))
+                ) && 
+                (
+                    this.WillItSnow == input.WillItSnow ||
+                    (this.WillItSnow != null &&
+                    this.WillItSnow.Equals(input.WillItSnow))
+                ) && 
+                (
+                    this.ChanceOfSnow == input.ChanceOfSnow ||
+                    (this.ChanceOfSnow != null &&
+                    this.ChanceOfSnow.Equals(input.ChanceOfSnow))
+                ) && 
+                (
                     this.VisKm == input.VisKm ||
                     (this.VisKm != null &&
                     this.VisKm.Equals(input.VisKm))
@@ -394,11 +579,6 @@ namespace IO.Swagger.Model
                     this.VisMiles == input.VisMiles ||
                     (this.VisMiles != null &&
                     this.VisMiles.Equals(input.VisMiles))
-                ) && 
-                (
-                    this.Uv == input.Uv ||
-                    (this.Uv != null &&
-                    this.Uv.Equals(input.Uv))
                 ) && 
                 (
                     this.GustMph == input.GustMph ||
@@ -411,9 +591,39 @@ namespace IO.Swagger.Model
                     this.GustKph.Equals(input.GustKph))
                 ) && 
                 (
-                    this.AirQuality == input.AirQuality ||
-                    (this.AirQuality != null &&
-                    this.AirQuality.Equals(input.AirQuality))
+                    this.SigHtMt == input.SigHtMt ||
+                    (this.SigHtMt != null &&
+                    this.SigHtMt.Equals(input.SigHtMt))
+                ) && 
+                (
+                    this.SwellHtMt == input.SwellHtMt ||
+                    (this.SwellHtMt != null &&
+                    this.SwellHtMt.Equals(input.SwellHtMt))
+                ) && 
+                (
+                    this.SwellHtFt == input.SwellHtFt ||
+                    (this.SwellHtFt != null &&
+                    this.SwellHtFt.Equals(input.SwellHtFt))
+                ) && 
+                (
+                    this.SwellDir == input.SwellDir ||
+                    (this.SwellDir != null &&
+                    this.SwellDir.Equals(input.SwellDir))
+                ) && 
+                (
+                    this.SwellDir16Point == input.SwellDir16Point ||
+                    (this.SwellDir16Point != null &&
+                    this.SwellDir16Point.Equals(input.SwellDir16Point))
+                ) && 
+                (
+                    this.SwellPeriodSecs == input.SwellPeriodSecs ||
+                    (this.SwellPeriodSecs != null &&
+                    this.SwellPeriodSecs.Equals(input.SwellPeriodSecs))
+                ) && 
+                (
+                    this.Uv == input.Uv ||
+                    (this.Uv != null &&
+                    this.Uv.Equals(input.Uv))
                 );
         }
 
@@ -426,10 +636,10 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.LastUpdatedEpoch != null)
-                    hashCode = hashCode * 59 + this.LastUpdatedEpoch.GetHashCode();
-                if (this.LastUpdated != null)
-                    hashCode = hashCode * 59 + this.LastUpdated.GetHashCode();
+                if (this.TimeEpoch != null)
+                    hashCode = hashCode * 59 + this.TimeEpoch.GetHashCode();
+                if (this.Time != null)
+                    hashCode = hashCode * 59 + this.Time.GetHashCode();
                 if (this.TempC != null)
                     hashCode = hashCode * 59 + this.TempC.GetHashCode();
                 if (this.TempF != null)
@@ -462,18 +672,48 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.FeelslikeC.GetHashCode();
                 if (this.FeelslikeF != null)
                     hashCode = hashCode * 59 + this.FeelslikeF.GetHashCode();
+                if (this.WindchillC != null)
+                    hashCode = hashCode * 59 + this.WindchillC.GetHashCode();
+                if (this.WindchillF != null)
+                    hashCode = hashCode * 59 + this.WindchillF.GetHashCode();
+                if (this.HeatindexC != null)
+                    hashCode = hashCode * 59 + this.HeatindexC.GetHashCode();
+                if (this.HeatindexF != null)
+                    hashCode = hashCode * 59 + this.HeatindexF.GetHashCode();
+                if (this.DewpointC != null)
+                    hashCode = hashCode * 59 + this.DewpointC.GetHashCode();
+                if (this.DewpointF != null)
+                    hashCode = hashCode * 59 + this.DewpointF.GetHashCode();
+                if (this.WillItRain != null)
+                    hashCode = hashCode * 59 + this.WillItRain.GetHashCode();
+                if (this.ChanceOfRain != null)
+                    hashCode = hashCode * 59 + this.ChanceOfRain.GetHashCode();
+                if (this.WillItSnow != null)
+                    hashCode = hashCode * 59 + this.WillItSnow.GetHashCode();
+                if (this.ChanceOfSnow != null)
+                    hashCode = hashCode * 59 + this.ChanceOfSnow.GetHashCode();
                 if (this.VisKm != null)
                     hashCode = hashCode * 59 + this.VisKm.GetHashCode();
                 if (this.VisMiles != null)
                     hashCode = hashCode * 59 + this.VisMiles.GetHashCode();
-                if (this.Uv != null)
-                    hashCode = hashCode * 59 + this.Uv.GetHashCode();
                 if (this.GustMph != null)
                     hashCode = hashCode * 59 + this.GustMph.GetHashCode();
                 if (this.GustKph != null)
                     hashCode = hashCode * 59 + this.GustKph.GetHashCode();
-                if (this.AirQuality != null)
-                    hashCode = hashCode * 59 + this.AirQuality.GetHashCode();
+                if (this.SigHtMt != null)
+                    hashCode = hashCode * 59 + this.SigHtMt.GetHashCode();
+                if (this.SwellHtMt != null)
+                    hashCode = hashCode * 59 + this.SwellHtMt.GetHashCode();
+                if (this.SwellHtFt != null)
+                    hashCode = hashCode * 59 + this.SwellHtFt.GetHashCode();
+                if (this.SwellDir != null)
+                    hashCode = hashCode * 59 + this.SwellDir.GetHashCode();
+                if (this.SwellDir16Point != null)
+                    hashCode = hashCode * 59 + this.SwellDir16Point.GetHashCode();
+                if (this.SwellPeriodSecs != null)
+                    hashCode = hashCode * 59 + this.SwellPeriodSecs.GetHashCode();
+                if (this.Uv != null)
+                    hashCode = hashCode * 59 + this.Uv.GetHashCode();
                 return hashCode;
             }
         }

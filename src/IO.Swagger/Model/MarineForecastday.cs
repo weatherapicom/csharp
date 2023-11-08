@@ -25,33 +25,58 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// Error401
+    /// MarineForecastday
     /// </summary>
     [DataContract]
-    public partial class Error401 :  IEquatable<Error401>, IValidatableObject
+    public partial class MarineForecastday :  IEquatable<MarineForecastday>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Error401" /> class.
+        /// Initializes a new instance of the <see cref="MarineForecastday" /> class.
         /// </summary>
-        /// <param name="code">code.</param>
-        /// <param name="message">message.</param>
-        public Error401(int? code = default(int?), string message = default(string))
+        /// <param name="date">date.</param>
+        /// <param name="dateEpoch">dateEpoch.</param>
+        /// <param name="day">day.</param>
+        /// <param name="astro">astro.</param>
+        /// <param name="hour">hour.</param>
+        public MarineForecastday(DateTime? date = default(DateTime?), int? dateEpoch = default(int?), ForecastDay day = default(ForecastDay), ForecastAstro astro = default(ForecastAstro), List<MarineHour> hour = default(List<MarineHour>))
         {
-            this.Code = code;
-            this.Message = message;
+            this.Date = date;
+            this.DateEpoch = dateEpoch;
+            this.Day = day;
+            this.Astro = astro;
+            this.Hour = hour;
         }
         
         /// <summary>
-        /// Gets or Sets Code
+        /// Gets or Sets Date
         /// </summary>
-        [DataMember(Name="code", EmitDefaultValue=false)]
-        public int? Code { get; set; }
+        [DataMember(Name="date", EmitDefaultValue=false)]
+        [JsonConverter(typeof(SwaggerDateConverter))]
+        public DateTime? Date { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Gets or Sets DateEpoch
         /// </summary>
-        [DataMember(Name="message", EmitDefaultValue=false)]
-        public string Message { get; set; }
+        [DataMember(Name="date_epoch", EmitDefaultValue=false)]
+        public int? DateEpoch { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Day
+        /// </summary>
+        [DataMember(Name="day", EmitDefaultValue=false)]
+        public ForecastDay Day { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Astro
+        /// </summary>
+        [DataMember(Name="astro", EmitDefaultValue=false)]
+        public ForecastAstro Astro { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Hour
+        /// </summary>
+        [DataMember(Name="hour", EmitDefaultValue=false)]
+        public List<MarineHour> Hour { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,9 +85,12 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Error401 {\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("class MarineForecastday {\n");
+            sb.Append("  Date: ").Append(Date).Append("\n");
+            sb.Append("  DateEpoch: ").Append(DateEpoch).Append("\n");
+            sb.Append("  Day: ").Append(Day).Append("\n");
+            sb.Append("  Astro: ").Append(Astro).Append("\n");
+            sb.Append("  Hour: ").Append(Hour).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,29 +111,44 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Error401);
+            return this.Equals(input as MarineForecastday);
         }
 
         /// <summary>
-        /// Returns true if Error401 instances are equal
+        /// Returns true if MarineForecastday instances are equal
         /// </summary>
-        /// <param name="input">Instance of Error401 to be compared</param>
+        /// <param name="input">Instance of MarineForecastday to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Error401 input)
+        public bool Equals(MarineForecastday input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
+                    this.Date == input.Date ||
+                    (this.Date != null &&
+                    this.Date.Equals(input.Date))
                 ) && 
                 (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
+                    this.DateEpoch == input.DateEpoch ||
+                    (this.DateEpoch != null &&
+                    this.DateEpoch.Equals(input.DateEpoch))
+                ) && 
+                (
+                    this.Day == input.Day ||
+                    (this.Day != null &&
+                    this.Day.Equals(input.Day))
+                ) && 
+                (
+                    this.Astro == input.Astro ||
+                    (this.Astro != null &&
+                    this.Astro.Equals(input.Astro))
+                ) && 
+                (
+                    this.Hour == input.Hour ||
+                    this.Hour != null &&
+                    this.Hour.SequenceEqual(input.Hour)
                 );
         }
 
@@ -118,10 +161,16 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Date != null)
+                    hashCode = hashCode * 59 + this.Date.GetHashCode();
+                if (this.DateEpoch != null)
+                    hashCode = hashCode * 59 + this.DateEpoch.GetHashCode();
+                if (this.Day != null)
+                    hashCode = hashCode * 59 + this.Day.GetHashCode();
+                if (this.Astro != null)
+                    hashCode = hashCode * 59 + this.Astro.GetHashCode();
+                if (this.Hour != null)
+                    hashCode = hashCode * 59 + this.Hour.GetHashCode();
                 return hashCode;
             }
         }

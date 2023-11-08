@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Areas** | **string** |  | [optional] 
 **Category** | **string** |  | [optional] 
 **Certainty** | **string** |  | [optional] 
-**_Event** | **string** |  | [optional] 
+**Event** | **string** |  | [optional] 
 **Note** | **string** |  | [optional] 
 **Effective** | **DateTime?** |  | [optional] 
 **Expires** | **DateTime?** |  | [optional] 
